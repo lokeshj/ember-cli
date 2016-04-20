@@ -1,0 +1,19 @@
+ember: &defaults
+  image: opinioapp/ember-cli:2.5.0
+  volumes:
+    - .:/myapp
+
+npm:
+  <<: *defaults
+  entrypoint: ['/usr/local/bin/npm']
+
+bower:
+  <<: *defaults
+  entrypoint: ['/usr/local/bin/bower', '--allow-root']
+
+server:
+  <<: *defaults
+  command: server
+  ports:
+    - "4200:4200"
+    - "49152:49152"
