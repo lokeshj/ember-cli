@@ -121,6 +121,6 @@ Example:
 ```
 $ docker-compose run --rm npm install
 $ docker-compose run --rm bower install bootstrap
-$ docker-compose run --rm ember generate model user
+$ docker-compose run --rm ember generate --pod model user
 ```
 
