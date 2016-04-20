@@ -1,5 +1,5 @@
-FROM node:4.2.3
-MAINTAINER Dan Lynn <docker@danlynn.org>
+FROM node:4.4.3
+MAINTAINER Lokesh Jangid <lokesh+docker.ember-cli@opinioapp.com>
 
 EXPOSE 4200 35729
 WORKDIR /myapp
@@ -8,11 +8,11 @@ WORKDIR /myapp
 ENTRYPOINT ["/usr/local/bin/ember"]
 CMD ["server"]
 
-# Note: npm is v2.14.7
+# Note: npm is v2.15.1
 RUN \
-	npm install -g ember-cli@2.4.3 &&\
+	npm install -g ember-cli@2.5.0 &&\
 	npm install -g bower@1.7.1 &&\
-	npm install -g phantomjs@1.9.19
+	npm install -g phantomjs@2.1.1
 
 # install watchman
 RUN \
