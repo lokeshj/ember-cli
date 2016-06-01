@@ -1,7 +1,8 @@
 ## Supported tags and respective `Dockerfile` links
 
-+ [`2.5.0`,`latest` (2.5.0/Dockerfile)](https://github.com/opinioapp/ember-cli/blob/2.5.0/Dockerfile)
-+ [`2.4.3`, (2.4.3/Dockerfile)](https://github.com/danlynn/ember-cli/blob/2.4.3/Dockerfile)
++ [`2.5.1`,`latest` (2.5.1/Dockerfile)](https://github.com/opinioapp/ember-cli/blob/2.5.1/Dockerfile)
++ [`2.5.0` (2.5.0/Dockerfile)](https://github.com/opinioapp/ember-cli/blob/2.5.0/Dockerfile)
++ [`2.4.3` (2.4.3/Dockerfile)](https://github.com/danlynn/ember-cli/blob/2.4.3/Dockerfile)
 + [`2.4.2` (2.4.2/Dockerfile)](https://github.com/danlynn/ember-cli/blob/2.4.2/Dockerfile)
 + [`2.3.0` (2.3.0/Dockerfile)](https://github.com/danlynn/ember-cli/blob/2.3.0/Dockerfile)
 + [`1.13.15` (1.13.15/Dockerfile)](https://github.com/danlynn/ember-cli/blob/1.13.15/Dockerfile)
@@ -11,11 +12,11 @@
 + [`1.13.1` (1.13.1/Dockerfile)](https://github.com/danlynn/ember-cli/blob/1.13.1/Dockerfile)
 
 
-This image was originally based on: [geoffreyd/ember-cli](https://registry.hub.docker.com/u/geoffreyd/ember-cli/) (hat tip)
+This image is a fork of : [danlynn/ember-cli](https://registry.hub.docker.com/u/danlynn/ember-cli/) (many thanks)
 
 This image contains everything you need to have a working development environment for ember-cli.  The container's working dir is /myapp so that you can setup a volume mapping your project dir to /myapp in the container.
 
-ember-cli v2.5.0 + node 4.4.3 + npm 2.15.1 + bower 1.7.1 + phantomjs 2.1.1 + watchman 3.5.0
+ember-cli v2.5.1 + node 4.4.5 + npm 2.15.6 + bower 1.7.1 + phantomjs 2.1.1 + watchman 3.5.0
 
 ![ember-cli logo](https://raw.githubusercontent.com/danlynn/ember-cli/master/logo.png)
 
