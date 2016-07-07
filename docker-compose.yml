@@ -1,5 +1,5 @@
 ember: &defaults
-  image: opinioapp/ember-cli:2.5.1
+  image: opinioapp/ember-cli:2.6.2
   volumes:
     - .:/myapp
 
