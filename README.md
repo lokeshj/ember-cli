@@ -1,6 +1,7 @@
 ## Supported tags and respective `Dockerfile` links
 
-+ [`2.6.1`,`latest` (2.6.1/Dockerfile)](https://github.com/opinioapp/ember-cli/blob/2.6.1/Dockerfile)
++ [`2.6.2`,`latest` (2.6.2/Dockerfile)](https://github.com/opinioapp/ember-cli/blob/2.6.2/Dockerfile)
++ [`2.6.1` (2.6.1/Dockerfile)](https://github.com/opinioapp/ember-cli/blob/2.6.1/Dockerfile)
 + [`2.5.1` (2.5.1/Dockerfile)](https://github.com/opinioapp/ember-cli/blob/2.5.1/Dockerfile)
 + [`2.5.0` (2.5.0/Dockerfile)](https://github.com/opinioapp/ember-cli/blob/2.5.0/Dockerfile)
 + [`2.4.3` (2.4.3/Dockerfile)](https://github.com/danlynn/ember-cli/blob/2.4.3/Dockerfile)
@@ -17,7 +18,7 @@ This image is a fork of : [danlynn/ember-cli](https://registry.hub.docker.com/u/
 
 This image contains everything you need to have a working development environment for ember-cli.  The container's working dir is /myapp so that you can setup a volume mapping your project dir to /myapp in the container.
 
-ember-cli v2.6.1 + node 4.4.5 + npm 2.15.6 + bower 1.7.1 + phantomjs 2.1.1 + watchman 3.5.0
+ember-cli v2.6.2 + node 4.4.7 + npm 2.15.9 + bower 1.7.9 + phantomjs 2.1.1 + watchman 3.5.0
 
 ![ember-cli logo](https://raw.githubusercontent.com/opinioapp/ember-cli/master/logo.png)
 
@@ -30,7 +31,7 @@ Setup a project to use this container via [docker-compose](https://www.docker.co
 
    ```
    ember: &defaults
-     image: opinioapp/ember-cli:2.6.1
+     image: opinioapp/ember-cli:2.6.2
      volumes:
        - .:/myapp
 
@@ -89,7 +90,7 @@ Setup a project to use this container via [docker-compose](https://www.docker.co
    Then watchman is running out of resources trying to track all the files in a large ember app.  To increase the `fs.inotify.max_user_watches` count to something that is more appropriate for an ember app, stop your docker-compose server by hitting ctrl-c (or `docker-compose stop server` if necessary) then execute the following command:
    
    ```
-   $ docker run --rm --privileged --entrypoint sysctl opinioapp/ember-cli:2.6.1 -w fs.inotify.max_user_watches=524288
+   $ docker run --rm --privileged --entrypoint sysctl opinioapp/ember-cli:2.6.2 -w fs.inotify.max_user_watches=524288
    ```
    
    Note that this will affect all containers that run on the current docker-machine from this point forward because `fs.inotify.max_user_watches` is a system-wide setting.  This shouldn't be a big deal however, so go ahead and give it a try.  Then start the docker-compose service again with
