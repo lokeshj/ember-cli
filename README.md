@@ -20,7 +20,7 @@ This image contains everything you need to have a working development environmen
 
 ember-cli v2.6.2 + node 4.4.7 + npm 2.15.9 + bower 1.7.9 + phantomjs 2.1.1 + watchman 3.5.0
 
-![ember-cli logo](https://raw.githubusercontent.com/danlynn/ember-cli/master/logo.png)
+![ember-cli logo](https://raw.githubusercontent.com/opinioapp/ember-cli/master/logo.png)
 
 
 ## How to use
@@ -90,7 +90,7 @@ Setup a project to use this container via [docker-compose](https://www.docker.co
    Then watchman is running out of resources trying to track all the files in a large ember app.  To increase the `fs.inotify.max_user_watches` count to something that is more appropriate for an ember app, stop your docker-compose server by hitting ctrl-c (or `docker-compose stop server` if necessary) then execute the following command:
    
    ```
-   $ docker run --rm --privileged --entrypoint sysctl danlynn/ember-cli:2.4.3 -w fs.inotify.max_user_watches=524288
+   $ docker run --rm --privileged --entrypoint sysctl opinioapp/ember-cli:2.6.2 -w fs.inotify.max_user_watches=524288
    ```
    
    Note that this will affect all containers that run on the current docker-machine from this point forward because `fs.inotify.max_user_watches` is a system-wide setting.  This shouldn't be a big deal however, so go ahead and give it a try.  Then start the docker-compose service again with
