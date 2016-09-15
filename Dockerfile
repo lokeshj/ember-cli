@@ -8,7 +8,6 @@ WORKDIR /myapp
 ENTRYPOINT ["/usr/local/bin/ember"]
 CMD ["server"]
 
-# Note: npm is v2.15.9
 RUN \
     npm install -g npm@2 &&\
 	npm install -g ember-cli@2.8.0 &&\
