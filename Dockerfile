@@ -1,4 +1,4 @@
-FROM node:4.5.0
+FROM node:6.9.1
 MAINTAINER Lokesh Jangid <lokesh+docker.ember-cli@opinioapp.com>
 
 EXPOSE 4200 35729
@@ -9,8 +9,7 @@ ENTRYPOINT ["/usr/local/bin/ember"]
 CMD ["server"]
 
 RUN \
-    npm install -g npm@2 &&\
-	npm install -g ember-cli@2.8.0 &&\
+	npm install -g ember-cli@2.9.0 &&\
 	npm install -g bower@1.7.9 &&\
 	npm install -g phantomjs@2.1.1 &&\
 	apt-get update &&\

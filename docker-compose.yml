@@ -1,5 +1,5 @@
 ember: &defaults
-  image: opinioapp/ember-cli:2.8.0
+  image: opinioapp/ember-cli:2.9.0
   volumes:
     - $SSH_AUTH_SOCK:/ssh-agent
     - .:/myapp
