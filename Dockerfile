@@ -4,10 +4,6 @@ MAINTAINER Lokesh Jangid <lokesh+docker.ember-cli@opinioapp.com>
 EXPOSE 4200 35729
 WORKDIR /myapp
 
-# run ember server on container start
-ENTRYPOINT ["/usr/local/bin/ember"]
-CMD ["server"]
-
 RUN \
 	npm install -g ember-cli@2.9.1 &&\
 	npm install -g bower@1.8.0 &&\
