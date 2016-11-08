@@ -31,29 +31,7 @@ ember-cli v2.9.1 + node 6.9.1 + npm 3.10.8 + bower 1.8.0 + phantomjs-prebuilt 2.
 
 Setup a project to use this container via [docker-compose](https://www.docker.com/products/docker-compose).  docker-compose is part of the all-in-one [docker-toolbox](https://www.docker.com/products/overview#/docker_toolbox) which is the easiest way to get up and running with docker.
 
-1. Create new project dir and add a docker-compose.yml file similar to the following:
-
-   ```
-   ember: &defaults
-     image: opinioapp/ember-cli:2.9.1
-     volumes:
-       - .:/myapp
-
-   npm:
-     <<: *defaults
-     entrypoint: ['/usr/local/bin/npm']
-
-   bower:
-     <<: *defaults
-     entrypoint: ['/usr/local/bin/bower', '--allow-root']
-
-   server:
-     <<: *defaults
-     command: server --watcher polling
-     ports:
-       - "4200:4200"
-       - "35729:35729"
-   ```
+1. Create a docker-compose file with the same contents as the one in this project.
 
 2. Make sure that your docker-machine is already running:
 
@@ -70,7 +48,7 @@ Setup a project to use this container via [docker-compose](https://www.docker.co
 2. Create an ember app in the current dir:
 
 	```
-	$ docker-compose run --rm ember init
+	$ docker-compose run --rm app ember init
 	```
 
 3. Start the ember server:
@@ -79,16 +57,22 @@ Setup a project to use this container via [docker-compose](https://www.docker.co
    $ docker-compose up
    ```
 
+   OR
+
+   ```
+   $ docker-compose run --rm app ember server
+   ```
+
    This launches the ember-cli server on port 4200 in the docker container. As you make changes to the ember webapp files, they will automagically be detected and the associated files will be recompiled and the browser will auto-reload showing the changes.
    
    Note that if you get an error something like
    
    ```
-   server_1 | Error: A non-recoverable condition has triggered.  Watchman needs your help!
-   server_1 | The triggering condition was at timestamp=1450119416: inotify-add-watch(/myapp/node_modules/ember-cli/node_modules/bower/node_modules/update-notifier/node_modules/latest-version/node_modules/package-json/node_modules/got/node_modules/duplexify/node_modules/readable-stream/doc) -> The user limit on the total number of inotify watches was reached; increase the fs.inotify.max_user_watches sysctl
-   server_1 | All requests will continue to fail with this message until you resolve
-   server_1 | the underlying problem.  You will find more information on fixing this at
-   server_1 | https://facebook.github.io/watchman/docs/troubleshooting.html#poison-inotify-add-watch
+   app_1 | Error: A non-recoverable condition has triggered.  Watchman needs your help!
+   app_1 | The triggering condition was at timestamp=1450119416: inotify-add-watch(/myapp/node_modules/ember-cli/node_modules/bower/node_modules/update-notifier/node_modules/latest-version/node_modules/package-json/node_modules/got/node_modules/duplexify/node_modules/readable-stream/doc) -> The user limit on the total number of inotify watches was reached; increase the fs.inotify.max_user_watches sysctl
+   app_1 | All requests will continue to fail with this message until you resolve
+   app_1 | the underlying problem.  You will find more information on fixing this at
+   app_1 | https://facebook.github.io/watchman/docs/troubleshooting.html#poison-inotify-add-watch
    ```
    
    Then watchman is running out of resources trying to track all the files in a large ember app.  To increase the `fs.inotify.max_user_watches` count to something that is more appropriate for an ember app, stop your docker-compose server by hitting ctrl-c (or `docker-compose stop server` if necessary) then execute the following command:
@@ -121,13 +105,13 @@ Setup a project to use this container via [docker-compose](https://www.docker.co
 
 ## Command Usage
 
-The ember, bower, and npm commands can be executed in the container to effect changes to your local project dir as follows.  You basically put a "docker-compose run --rm" in front of any of the 3 commands and pass the normal command options as usual.
+The ember, bower, and npm commands can be executed in the container to effect changes to your local project dir as follows.  You basically put a "docker-compose run --rm app" in front of any of the 3 commands and pass the normal command options as usual.
 
 Example:
 
 ```
-$ docker-compose run --rm npm install
-$ docker-compose run --rm bower install bootstrap
-$ docker-compose run --rm ember generate --pod model user
+$ docker-compose run --rm app npm install
+$ docker-compose run --rm app bower install bootstrap
+$ docker-compose run --rm app ember generate --pod model user
 ```
 

@@ -1,22 +1,11 @@
-ember: &defaults
+app:
   image: opinioapp/ember-cli:2.9.1
   volumes:
     - $SSH_AUTH_SOCK:/ssh-agent
     - .:/myapp
   environment:
     - SSH_AUTH_SOCK=/ssh-agent
-
-npm:
-  <<: *defaults
-  entrypoint: ['/usr/local/bin/npm']
-
-bower:
-  <<: *defaults
-  entrypoint: ['/usr/local/bin/bower', '--allow-root']
-
-server:
-  <<: *defaults
   command: server
   ports:
-    - "4200:4200"
-    - "49152:49152"
+      - "4200:4200"
+      - "49152:49152"
