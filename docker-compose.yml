@@ -1,11 +1,12 @@
 app:
-  image: opinioapp/ember-cli:latest
+  image: opinioapp/ember-cli:2.9.1
   volumes:
     - $SSH_AUTH_SOCK:/ssh-agent
     - .:/myapp
   environment:
     - SSH_AUTH_SOCK=/ssh-agent
-  command: server
+  command: ember server
   ports:
       - "4200:4200"
       - "49152:49152"
+      - "3000:3000"
