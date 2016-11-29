@@ -5,7 +5,7 @@ EXPOSE 4200 35729
 WORKDIR /myapp
 
 RUN \
-	npm install -g ember-cli@2.9.1 &&\
+	npm install -g ember-cli@2.10.0 &&\
 	npm install -g bower@1.8.0 &&\
 	npm install -g phantomjs-prebuilt@2.1.13 &&\
 	apt-get update &&\
