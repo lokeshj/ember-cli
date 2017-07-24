@@ -1,6 +1,6 @@
 ## Supported tags and respective `Dockerfile` links
 
-+ [`2.14.0-node8.2.0`,`latest` (2.14.0-node8.2.0/Dockerfile)](https://github.com/opinioapp/ember-cli/blob/2.14.0-node8.2.0/Dockerfile)
++ [`2.14.0-node8.2.1`,`latest` (2.14.0-node8.2.1/Dockerfile)](https://github.com/opinioapp/ember-cli/blob/2.14.0-node8.2.1/Dockerfile)
 + [`2.14.0`(2.14.0/Dockerfile)](https://github.com/opinioapp/ember-cli/blob/2.14.0/Dockerfile)
 + [`2.13.3`(2.13.3/Dockerfile)](https://github.com/opinioapp/ember-cli/blob/2.13.3/Dockerfile)
 + [`2.13.1`(2.13.1/Dockerfile)](https://github.com/opinioapp/ember-cli/blob/2.13.1/Dockerfile)
