@@ -1,5 +1,5 @@
 app:
-  image: opinioapp/ember-cli:2.14.2
+  image: opinioapp/ember-cli:2.16.2
   volumes:
     - $SSH_AUTH_SOCK:/ssh-agent
     - .:/myapp
